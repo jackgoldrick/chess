@@ -6,20 +6,26 @@
 #include <stdio.h>
 #include <iostream>
 #include <string>
+#include "player.h"
 
 
 
 using namespace std;
 
-class chess {                    // The class
+class chess {       // The chess class
 
-private:
-char game_mode = NULL;
+  private:
+    char game_mode = NULL;
+    bool white_turn = true;
+    player white;
+    player black;
+    
 
 
 
 public:              // Access specifier
-    int myNum;       // Attribute (int variable)
-    string myString; // Attribute (string variable)
+    void do_turn();
+    bool check4mate();;
+    bool 
 };
 #endif

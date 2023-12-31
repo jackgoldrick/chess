@@ -12,17 +12,19 @@ using namespace std;
 
 class player { // The player class
 
-private:
-    char game_type = NULL;
-    int num_pieces;
-    int num_pawns;
-    
+  private:
+    int num_pieces = 16;
+    int num_pawns = 8;
+    int num_rooks = 2;
+    int num_knights = 2;
+    int num_queens = 1;
 
+    bool king = true;
+    bool king_check = false;
+    bool checkmate = false;    
 
-
-public:              // Access specifier
-    int myNum;       // Attribute (int variable)
-    string myString; // Attribute (string variable)
+  public:              // Access specifier
+   player();
 };
 
 #endif
