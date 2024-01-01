@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string>
 #include "player.h"
+#include "board.h"
 
 
 
@@ -17,15 +18,19 @@ class chess {       // The chess class
   private:
     char game_mode = NULL;
     bool white_turn = true;
-    player white;
-    player black;
+    player* white;
+    player* black;
+    board* brd;
+
     
 
 
 
 public:              // Access specifier
     void do_turn();
-    bool check4mate();;
-    bool 
+    bool check4mate();
+    bool king_check();
+    chess();
+    chess(char mode);
 };
 #endif

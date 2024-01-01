@@ -3,26 +3,23 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include "piece.h"
 
-class pawn {
+//template <class T>
+class pawn : public piece<pawn>
+{
 
-  public:
-    pawn();
-    pawn(char player);
-    move();
-    attack();
+public:
+  pawn();
+  pawn(char player);
+  char move();
+  char attack();
+  void transform(char dest);
 
-
-  private:
-    char color = NULL;
-
-
-
-
-
-
-
+private:
+  char color = NULL;
+  int loc;
 };
 
- #endif
+#endif
  
