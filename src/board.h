@@ -7,16 +7,17 @@
 #include <string>
 #include "piece.h"
 
+
 class board { // The class
+  
 
+  private :
 
-
-private : 
-
-char game_mode = NULL;
+      char game_mode = NULL;
 
 public:              // Access specifier
-  void  
+  board();
+  piece* brd[8][8];
 };
 
 #endif

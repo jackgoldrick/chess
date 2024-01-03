@@ -20,7 +20,7 @@ class chess {       // The chess class
     bool white_turn = true;
     player* white;
     player* black;
-    board* brd;
+    board* gbrd;
 
     
 

@@ -9,7 +9,7 @@ chess::chess(){
     this->game_mode = 'r';
     this->white = new player();
     this->black = new player();
-    this->brd = new board();
+    this->gbrd = new board();
 
 
 }

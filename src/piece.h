@@ -5,15 +5,16 @@
 #include <stdio.h>
 #include "player.h"
 
-template <class C>
+
 class piece : public player {
 
   public:
-        C piece();
-        C piece(char player);
-        char move();
-        char attack();
-        C transform(char dest);
+  
+        piece();
+        piece(char player);
+        virtual  char move();
+        virtual char attack();
+        virtual piece transform(char dest);
 
     private:
         char color = NULL;

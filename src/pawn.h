@@ -6,19 +6,19 @@
 #include "piece.h"
 
 //template <class T>
-class pawn : public piece<pawn>
+class pawn : public piece
 {
 
 public:
   pawn();
   pawn(char player);
-  char move();
-  char attack();
-  void transform(char dest);
+  char move() override;
+  char attack() override;
+  piece transform(char dest) override;
 
 private:
-  char color = NULL;
-  int loc;
+ // char color = NULL;
+ // int loc;
 };
 
 #endif
