@@ -15,11 +15,12 @@ class piece : public player {
         virtual  char move();
         virtual char attack();
         virtual piece transform(char dest);
+        virtual bool move_request();
 
-    private:
+      private:
         char color = NULL;
         int loc;
-        unsigned char move_request();
+        
         unsigned char atk_request();
 
 };

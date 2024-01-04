@@ -12,6 +12,7 @@ class pawn : public piece
 public:
   pawn();
   pawn(char player);
+  bool move_request() override;
   char move() override;
   char attack() override;
   piece transform(char dest) override;
@@ -19,6 +20,7 @@ public:
 private:
  // char color = NULL;
  // int loc;
+ bool first_move = true;
 };
 
 #endif
