@@ -22,7 +22,14 @@ pawn::pawn(char player){
 
 bool pawn::move_request() {
     if (this->first_move) {
+
+    } else {
         
+
+
+
+
+
     }
 }
 

@@ -21,12 +21,9 @@ class chess {       // The chess class
     player* white;
     player* black;
     board* gbrd;
+    bool move_request(piece &refPieece);
 
-    
-
-
-
-public:              // Access specifier
+  public : // Access specifier
     void do_turn();
     bool check4mate();
     bool king_check();

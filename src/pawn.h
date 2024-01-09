@@ -16,11 +16,12 @@ public:
   char move() override;
   char attack() override;
   piece transform(char dest) override;
+  bool first_move = true;
 
 private:
  // char color = NULL;
  // int loc;
- bool first_move = true;
+
 };
 
 #endif

@@ -10,19 +10,20 @@
 
 board::board(){
  // pawns for white 
-    for (int j = 0; j < 8; j++){
-        brd[1][j] = new pawn('w');
-    }
+   for (int j = 0; j < 8; j++){
+      brd[1][j] = new pawn('w');
+   }
 
 
  //pawns for black
-    for (int j = 0; j < 8; j++) {
-        brd[6][j] = new pawn('b');
-    }
+   for (int j = 0; j < 8; j++) {
+      brd[6][j] = new pawn('b');
+   }
 
  // rooks
-   // brd[0][0] = new rook('w');
+   brd[0][0] = new rook('w');
+   brd[0][7] = new rook('w');
 
-
-
+   brd[7][0] = new rook('b');
+   brd[7][7] = new rook('b');
 }
