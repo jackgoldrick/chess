@@ -33,15 +33,14 @@ bool pawn::move_request() {
     }
 }
 
-char pawn::move() {
+void pawn::move() {
     if (this->move_request()) {
         
         
 
-        return 'g';
     }
 
-    return 'f';
+  
 
 }
 

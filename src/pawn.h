@@ -13,7 +13,7 @@ public:
   pawn();
   pawn(char player);
   bool move_request() override;
-  char move() override;
+  void move() override;
   char attack() override;
   piece transform(char dest) override;
   bool first_move = true;

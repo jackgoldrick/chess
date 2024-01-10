@@ -12,12 +12,12 @@ class board { // The class
   
 
   private :
+    char game_mode = NULL;
 
-      char game_mode = NULL;
-
-public:              // Access specifier
-  board();
-  piece* brd[8][8];
+  public:              // Access specifier
+    board();
+    bool checkSpace();
+    piece* brd[8][8];
 };
 
 #endif
