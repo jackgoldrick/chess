@@ -7,8 +7,8 @@
 #include "board.h"
 
 
-class piece : public board {
-
+class piece {
+  friend class player;
   public:
   
     piece();
@@ -24,7 +24,7 @@ class piece : public board {
   private:
     char color = NULL;
     int loc;
-    unsigned char atk_request();
+    //unsigned char atk_request();
 
 };
 

@@ -20,14 +20,16 @@ class chess {       // The chess class
     bool white_turn = true;
     player* white;
     player* black;
-    board* gbrd;
-    bool move_request(piece &refPieece);
+    board* brd;
+    bool move_request(piece* refPieece);
+    
 
   public : // Access specifier
-    void do_turn();
-    bool check4mate();
+    void do_turn(player *refPlayer);
+    
     bool king_check();
     chess();
     chess(char mode);
+    void playGame();
 };
 #endif

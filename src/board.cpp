@@ -12,12 +12,14 @@
 #include "knight.h"
 
 
-bool board::checkSpace(){
+piece& board::checkSpace(int Loc){
 
+  int col = Loc % 8;
 
+  int row = (Loc - col) / 8;
 
-
-  
+  return *brd[row][col]; 
+ 
 }
 
 board::board(){
@@ -56,8 +58,6 @@ board::board(){
   // king
   brd[0][4] = new king('w');
   brd[7][4] = new king('b');
-
-  
 
 
 }

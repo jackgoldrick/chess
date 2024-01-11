@@ -16,7 +16,7 @@ class board { // The class
 
   public:              // Access specifier
     board();
-    bool checkSpace();
+    piece& checkSpace(int Loc);
     piece* brd[8][8];
 };
 

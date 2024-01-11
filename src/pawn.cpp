@@ -16,8 +16,19 @@ pawn::pawn(){
 pawn::pawn(char player){
 
 
+ 
 
+}
 
+bool pawn::checkPath(){
+    if (this->checkFirst_move())
+    {
+        this->playFirst_move();
+    }
+    else
+    {
+        this->move();
+    }
 }
 
 bool pawn::checkFirst_move() { return this->first_move; }
