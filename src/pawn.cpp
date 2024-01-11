@@ -20,26 +20,9 @@ pawn::pawn(char player){
 
 }
 
-bool pawn::move_request() {
-    if (this->first_move) {
-
-    } else {
-        
-
-
-
-
-
-    }
-}
+bool pawn::checkFirst_move() { return this->first_move; }
 
 void pawn::move() {
-    if (this->move_request()) {
-        
-        
-
-    }
-
   
 
 }
