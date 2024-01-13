@@ -7,7 +7,7 @@
 
 chess::chess(){
     this->game_mode = 'r';
-    this->brd = new board();
+    this->gbrd = new board();
     this->white = new player();
     this->black = new player();
     
@@ -34,7 +34,15 @@ void chess::do_turn(player *refPlayer){
     int qLoc = 0;
     /* Query for piece to use */
         // qLoc => int //
-   bool temp = this->move_request(&this->brd->checkSpace(qLoc));
+   if (this->move_request(&this->gbrd->checkSpace(qLoc))){
+
+
+
+
+
+
+
+   }
 
 }
 
@@ -42,7 +50,7 @@ bool chess::move_request(piece* refPieece) {
     if (refPieece == nullptr) {
         return false;
     }  
-    return refPieece->checkPath();
+    return refPieece->checkPath(&(gbrd->brd));
 }
 
 /* char chess::move() {

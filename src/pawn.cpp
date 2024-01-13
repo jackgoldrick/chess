@@ -20,9 +20,9 @@ pawn::pawn(char player){
 
 }
 
-bool pawn::checkPath(){
-    if (this->checkFirst_move())
-    {
+bool pawn::checkPath(piece *tbrd){
+    if (this->checkFirst_move()) {
+        if (&(tbrd->checkSpace()) == nullptr)
         this->playFirst_move();
     }
     else

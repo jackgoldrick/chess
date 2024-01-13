@@ -7,7 +7,7 @@
 #include "board.h"
 
 
-class piece {
+class piece : public board {
   friend class player;
   public:
   
@@ -19,7 +19,7 @@ class piece {
     virtual bool move_request();
     virtual bool checkFirst_move();
     virtual bool moveFirst();
-    virtual bool checkPath();
+    virtual bool checkPath(piece* brd);
     virtual void playFirst_move();
   private:
     char color = NULL;
