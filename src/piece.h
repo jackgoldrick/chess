@@ -19,9 +19,13 @@ class piece : public board {
     virtual bool move_request();
     virtual bool checkFirst_move();
     virtual bool moveFirst();
-    virtual bool checkPath(piece* brd);
+    virtual bool checkPath(piece*** brd);
     virtual void playFirst_move();
+    virtual bool checkPath(board* brd);
+    virtual int get_location();
+    virtual bool is_white();
   private:
+    bool white = true;
     char color = NULL;
     int loc;
     //unsigned char atk_request();

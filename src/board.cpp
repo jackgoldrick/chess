@@ -22,7 +22,33 @@ piece& board::checkSpace(int Loc){
  
 }
 
+bool board::validate_space(piece& ref_piece)  {
+
+
+
+
+
+
+
+
+
+
+}
+
+bool board::check_null(piece* refPiece) {
+  if (refPiece == nullptr) {
+    return true;
+
+  }
+
+  return false;
+
+}
+
 board::board(){
+
+  brd  = (piece***) malloc(16 * (sizeof(nullptr) + sizeof(pawn))  + 2 * (sizeof(king) + sizeof(queen) + 2 * (sizeof(rook)  + sizeof(knight) + sizeof(bishop))));
+
   // pawns for white 
   for (int j = 0; j < 8; j++){
     brd[1][j] = new pawn('w');

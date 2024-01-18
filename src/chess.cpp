@@ -5,6 +5,10 @@
 #include <string>
 #include "player.h"
 
+/** Default Constructor
+ * used to initialize the game object 
+ * to the default regular 2d game
+*/
 chess::chess(){
     this->game_mode = 'r';
     this->gbrd = new board();
@@ -13,6 +17,10 @@ chess::chess(){
     
 }
 
+/** this function plays the game of chess
+ *  handles the call to do the turn based on 
+ *  the bool of the turn
+*/
 void chess::playGame()
 {
     while (!(this->white->check4mate() || this->black->check4mate()))
@@ -29,15 +37,30 @@ void chess::playGame()
     }
 }
 
+/** This does the turn and querries the player for the 
+ *  desired move/attack location
+ *  @param refPlayer is a pointer so the function knows 
+ *  which player the turn is for when the location
+ *  is checked
+*/
 void chess::do_turn(player *refPlayer){
     
     int qLoc = 0;
     /* Query for piece to use */
-        // qLoc => int //
-   if (this->move_request(&this->gbrd->checkSpace(qLoc))){
+    // qLoc => int //
 
+   piece & playerPiece = this->gbrd->checkSpace(qLoc);
 
+   while (this->gbrd->check_null(&playerPiece)){
+        /*
+        
+            Query for piece to use
+        
+        */
 
+   }
+
+   if (this->move_request(&playerPiece)) {
 
 
 
@@ -46,11 +69,14 @@ void chess::do_turn(player *refPlayer){
 
 }
 
+/* This function 
+
+
+
+*/
 bool chess::move_request(piece* refPieece) {
-    if (refPieece == nullptr) {
-        return false;
-    }  
-    return refPieece->checkPath(&(gbrd->brd));
+    
+    return refPieece->checkPath((this->gbrd->brd));
 }
 
 /* char chess::move() {

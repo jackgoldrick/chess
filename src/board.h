@@ -16,8 +16,12 @@ class board { // The class
 
   public:              // Access specifier
     board();
+    ~board(); // Destroy
+    bool validate_space(piece & ref_piece);
+    bool check_null(piece* refPiece);
     piece& checkSpace(int Loc);
-    piece* brd[8][8];
+    bool check_loc(int Loc);
+    piece*** brd;
 };
 
 #endif

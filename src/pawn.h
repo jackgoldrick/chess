@@ -17,8 +17,10 @@ public:
   char attack() override;
   bool checkFirst_move() override;
   piece transform(char dest) override;
-  bool checkPath(piece *brd) override;
+  bool checkPath(board* brd) override;
   bool first_move = true;
+  int get_location() override;
+  bool is_white() override;
 
 private:
  // char color = NULL;
