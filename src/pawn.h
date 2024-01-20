@@ -22,6 +22,11 @@ public:
   int get_location() override;
   bool is_white() override;
 
+  bool check_white_path(int loc) override;
+  bool check_black_path(int location, board* game)  override;
+
+
+
 private:
  // char color = NULL;
  // int loc;

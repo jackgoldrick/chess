@@ -13,17 +13,31 @@ class piece : public board {
   
     piece();
     piece(char player);
+    
+    
+    
     virtual void move();
+    virtual void playFirst_move();
     virtual char attack();
-    virtual piece transform(char dest);
+
     virtual bool move_request();
     virtual bool checkFirst_move();
     virtual bool moveFirst();
+
     virtual bool checkPath(piece*** brd);
-    virtual void playFirst_move();
     virtual bool checkPath(board* brd);
-    virtual int get_location();
+
     virtual bool is_white();
+
+    virtual bool check_white_path(int loc);
+    virtual bool check_black_path(int location, board* game) ;
+
+
+
+
+    virtual piece transform(char dest);
+    virtual int get_location();
+    
   private:
     bool white = true;
     char color = NULL;

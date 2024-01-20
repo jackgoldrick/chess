@@ -19,6 +19,26 @@ pawn::pawn(char player){
  
 
 }
+
+
+bool pawn::check_black_path(int location, board* brd) {
+    int piece_loc = this->get_location();
+    if (this->checkFirst_move()) {
+       if (brd->is_empty(piece_loc + (8))) {
+
+        return true;
+
+       } 
+    }
+    return false;
+
+
+
+}
+
+
+
+
 /**
  *  checks pawns path 
  * 
@@ -29,9 +49,6 @@ pawn::pawn(char player){
 */
 bool pawn::checkPath(board* tbrd){
     if (this->checkFirst_move()) {
-        if (tbrd->validate_space(&this))
-
-        this->playFirst_move();
     }
     else
     {
@@ -42,7 +59,10 @@ bool pawn::checkPath(board* tbrd){
 bool pawn::checkFirst_move() { return this->first_move; }
 
 void pawn::move() {
-    if (this->is_white())
+    if (this->is_white()) {
+
+
+    }
   
 
 

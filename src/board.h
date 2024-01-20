@@ -20,7 +20,11 @@ class board { // The class
     bool validate_space(piece & ref_piece);
     bool check_null(piece* refPiece);
     piece& checkSpace(int Loc);
+    piece* check_Space(int Loc);
+    int get_row (int location);
+    int get_col(int location);
     bool check_loc(int Loc);
+    bool is_empty(int Loc);
     piece*** brd;
 };
 

@@ -61,9 +61,8 @@ void chess::do_turn(player *refPlayer){
    }
 
    if (this->move_request(&playerPiece)) {
-
-
-
+        
+        
 
    }
 
@@ -71,12 +70,21 @@ void chess::do_turn(player *refPlayer){
 
 /* This function 
 
-
+    this->gbrd->brd
 
 */
 bool chess::move_request(piece* refPieece) {
+    int location = 0;
+    /**
+     *  Query for location to move to
+     *
+    */
+    if (refPieece->is_white()) {
+       // return refPieece->check_white_path(location, gbrd);
+    }
+
+    return refPieece->check_black_path(location, gbrd);
     
-    return refPieece->checkPath((this->gbrd->brd));
 }
 
 /* char chess::move() {

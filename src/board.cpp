@@ -22,7 +22,49 @@ piece& board::checkSpace(int Loc){
  
 }
 
+
+piece* board::check_Space(int Loc){
+
+  int col = Loc % 8;
+
+  int row = (Loc - col) / 8;
+  
+
+  return brd[row][col]; 
+ 
+}
+
+bool board::is_empty(int Loc){
+
+  int col = Loc % 8;
+
+  int row = (Loc - col) / 8;
+
+  if(this->brd[row][col])  {
+    
+    return false;
+
+  }
+
+  return true; 
+ 
+}
+
+int board::get_row (int location) {
+
+ return ((location - (location % 8)) / 8);
+
+}
+
+int board::get_col(int location) {
+
+  return location % 8;
+
+}
+
+
 bool board::validate_space(piece& ref_piece)  {
+    
 
 
 
@@ -36,7 +78,7 @@ bool board::validate_space(piece& ref_piece)  {
 }
 
 bool board::check_null(piece* refPiece) {
-  if (refPiece == nullptr) {
+  if (refPiece) {
     return true;
 
   }
@@ -47,7 +89,7 @@ bool board::check_null(piece* refPiece) {
 
 board::board(){
 
-  brd  = (piece***) malloc(16 * (sizeof(nullptr) + sizeof(pawn))  + 2 * (sizeof(king) + sizeof(queen) + 2 * (sizeof(rook)  + sizeof(knight) + sizeof(bishop))));
+  brd  = (piece***) malloc(32 * (sizeof(nullptr) + sizeof(pawn))  + 2 * (sizeof(king) + sizeof(queen) + 2 * (sizeof(rook)  + sizeof(knight) + sizeof(bishop))));
 
   // pawns for white 
   for (int j = 0; j < 8; j++){
