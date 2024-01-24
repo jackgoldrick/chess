@@ -1,6 +1,7 @@
 #ifndef PIECE_H
 #define PIECE_H
 
+
 #include <stdlib.h>
 #include <stdio.h>
 #include "player.h"
@@ -10,12 +11,24 @@
 class piece : public board {
   friend class player;
   public:
-  
-    piece();
+   
+    piece() {
+      this->color = EMPTY;
+    
+    }
+
     piece(char player);
+    ~piece() =  default;
     
-    
-    
+
+    virtual void set_color(char clr) { this->color = clr; }
+
+    virtual void set_location(int loc);
+    virtual void set_location(int row, int col);
+
+    virtual int get_location();
+    virtual unsigned char get_color();
+
     virtual void move();
     virtual void playFirst_move();
     virtual char attack();
@@ -24,22 +37,26 @@ class piece : public board {
     virtual bool checkFirst_move();
     virtual bool moveFirst();
 
-    virtual bool checkPath(piece*** brd);
-    virtual bool checkPath(board* brd);
+    virtual bool check_attack_path(piece* refPiece, int location);
+    virtual bool check_attack_path(piece* refPiece, int row, int col);
 
     virtual bool is_white();
 
+    virtual bool check_path(int location, board* brd);
     virtual bool check_white_path(int loc);
-    virtual bool check_black_path(int location, board* game) ;
-
-
-
+    virtual bool check_black_path(int location, board* game);
 
     virtual piece transform(char dest);
-    virtual int get_location();
+   
+    int translate(int row, int col) {
     
+      return (row * 8 + col);
+
+
+    }
+
   private:
-    bool white = true;
+    // bool white = true;
     char color = NULL;
     int loc;
     //unsigned char atk_request();

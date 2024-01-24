@@ -23,15 +23,12 @@ chess::chess(){
 */
 void chess::playGame()
 {
-    while (!(this->white->check4mate() || this->black->check4mate()))
-    {
-        if (this->white_turn)
-        {
+    while (!(this->white->check4mate() || this->black->check4mate())) {
+        if (this->white_turn) {
+            
             this->do_turn(white);
         }
-
-        else
-        {
+        else {
             this->do_turn(black);
         }
     }
@@ -43,7 +40,7 @@ void chess::playGame()
  *  which player the turn is for when the location
  *  is checked
 */
-void chess::do_turn(player *refPlayer){
+void chess::do_turn(player *refPlayer) {
     
     int qLoc = 0;
     /* Query for piece to use */
@@ -60,11 +57,7 @@ void chess::do_turn(player *refPlayer){
 
    }
 
-   if (this->move_request(&playerPiece)) {
-        
-        
-
-   }
+   if (this->move_request(&playerPiece)) this->gbrd->move_piece(&playerPiece, qLoc);
 
 }
 

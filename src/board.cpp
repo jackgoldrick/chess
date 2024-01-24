@@ -63,6 +63,32 @@ int board::get_col(int location) {
 }
 
 
+void board::move_piece(piece* refPieece, int location){
+  // find the piece's old location
+  int destruction_location = refPieece->get_location();
+  
+  
+  this->brd[get_row(location)][get_col(location)] = refPieece;
+
+  refPieece->set_location(location);
+
+  this->brd[get_row(destruction_location)][get_col(destruction_location)]->~piece();
+
+
+}
+
+void board::move_piece(piece* refPieece, int row, int col){
+  
+
+
+
+
+
+
+
+}
+
+
 bool board::validate_space(piece& ref_piece)  {
     
 
