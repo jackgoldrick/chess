@@ -67,7 +67,7 @@ void board::move_piece(piece* refPieece, int location){
   // find the piece's old location
   int destruction_location = refPieece->get_location();
   
-  
+  // set empty location to 
   this->brd[get_row(location)][get_col(location)] = refPieece;
 
   refPieece->set_location(location);

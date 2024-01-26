@@ -17,6 +17,7 @@ public:
     char attack() override;
     piece transform(char dest) override;
     bool first_move = true;
+    bool check_path(int location, board* brd) override;
 
 private:
     // char color = NULL;

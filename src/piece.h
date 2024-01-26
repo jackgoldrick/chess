@@ -14,7 +14,7 @@ class piece : public board {
    
     piece() {
       this->color = EMPTY;
-    
+      
     }
 
     piece(char player);
@@ -54,6 +54,10 @@ class piece : public board {
 
 
     }
+
+    int get_row(int location) { return ((location - (location % 8)) / 8);  }
+
+    int get_column(int location) { return location % 8;   }
 
   private:
     // bool white = true;
