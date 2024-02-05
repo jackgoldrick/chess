@@ -16,6 +16,7 @@ public:
     void move() override;
     char attack() override;
     piece transform(char dest) override;
+    bool check_path(int location, board* brd) override;
     bool first_move = true;
 
 private:

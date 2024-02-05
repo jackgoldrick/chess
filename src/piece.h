@@ -4,9 +4,11 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdexcept>
 #include "player.h"
 #include "board.h"
 
+using namespace std;
 
 class piece : public board {
   friend class player;
