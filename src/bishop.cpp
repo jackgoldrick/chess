@@ -4,6 +4,11 @@
 #include "bishop.h"
 
 //using namespace std;
+bishop::bishop(char color, int row, int col) {
+    this->set_color(color);
+    this->set_location(row, col);
+}
+
 
 bool bishop::check_path(int location, board* brd){
     int piece_loc = this->get_location();
@@ -54,3 +59,6 @@ bool bishop::check_path(int location, board* brd){
         
 
 }
+
+
+

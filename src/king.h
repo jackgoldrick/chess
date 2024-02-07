@@ -12,10 +12,11 @@ class king : public piece
 public:
     king();
     king(char player);
+    king(char color, int row, int col);
     bool move_request() override;
     void move() override;
     char attack() override;
-    piece transform(char dest) override;
+    bool check_path(int location, board* brd) override;
     bool first_move = true;
 
 private:

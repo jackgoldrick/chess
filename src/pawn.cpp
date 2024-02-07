@@ -36,6 +36,15 @@ pawn::pawn(char player){
 }
 
 
+piece pawn::transform(char dest) {
+    
+
+
+
+
+}
+
+
 
 
 bool pawn::check_path(int location, board* brd) {

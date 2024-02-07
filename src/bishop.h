@@ -12,12 +12,12 @@ class bishop : public piece
 public:
     bishop();
     bishop(char player);
+    bishop(char color, int row, int col);
+    bishop(char color, int loc);
     bool move_request() override;
     void move() override;
     char attack() override;
-    piece transform(char dest) override;
     bool check_path(int location, board* brd) override;
-    bool first_move = true;
 
 private:
     // char color = NULL;
