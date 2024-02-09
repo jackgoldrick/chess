@@ -25,7 +25,7 @@ public:
   int get_location() override;
 
   bool is_white() override;
-  bool check_attack_path(piece* refPiece, int loc) override;
+  bool check_attack_path(int location, board* brd) override;
 
   bool first_move = true;
 
