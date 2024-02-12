@@ -21,8 +21,7 @@ chess::chess(){
  *  handles the call to do the turn based on 
  *  the bool of the turn
 */
-void chess::playGame()
-{
+void chess::playGame() {
     while (!(this->white->check4mate() || this->black->check4mate())) {
         if (this->white_turn) {
             
@@ -46,9 +45,11 @@ void chess::do_turn(player *refPlayer) {
     /* Query for piece to use */
     // qLoc => int //
 
-   piece & playerPiece = this->gbrd->checkSpace(qLoc);
+   piece *playerPiece = &(this->gbrd->checkSpace(qLoc));
 
-   while (this->gbrd->check_null(&playerPiece)){
+   while (this->gbrd->check_null(playerPiece)) {
+        
+        playerPiece = this->gbrd->query();
         /*
         
             Query for piece to use
@@ -57,7 +58,32 @@ void chess::do_turn(player *refPlayer) {
 
    }
 
-   if (this->move_request(&playerPiece)) this->gbrd->move_piece(&playerPiece, qLoc);
+   if (this->move_request(playerPiece)) this->gbrd->move_piece(playerPiece, qLoc);
+
+}
+
+
+piece* chess::query() {
+
+    try {
+
+
+
+        if (cur_cmd_strm)
+
+
+
+
+    } catch (const std::exception& e) {
+
+
+
+
+    }
+
+
+
+
 
 }
 

@@ -47,15 +47,13 @@ piece pawn::transform(char dest) {
 bool pawn::check_attack_path(int location, board* brd) {
     int piece_loc = this->get_location();
     int color = -1;
-
     int direction = abs(location - piece_loc);
 
     try {
         if (direction == 7 || direction == 9) {
 
-            if (this->get_color() == WHITE)  color = 1;    
-
-
+            if (this->get_color() == WHITE)  color = 1;
+            if (!brd->is_empty(piece_loc + (color * direction))) return true;
 
         } else {
 
@@ -65,27 +63,17 @@ bool pawn::check_attack_path(int location, board* brd) {
 
     } catch (const std::exception& e) {
 
-
-
-
-
+        printf(e.what());
+        return false;
     }
 
-
-
-    if (!brd->is_empty(piece_loc + (color * direction))) return true;
-
-
     return false;
-
-
 
 }
 
 
 bool pawn::check_path(int location, board* brd) {
     int piece_loc = this->get_location();
-
     int color = -1;
 
     if (this->get_color() == WHITE)  int color = 1;    
@@ -99,7 +87,7 @@ bool pawn::check_path(int location, board* brd) {
 
             if (!brd->is_empty(piece_loc + (color * 8 * i))) return false;
        } 
-
+       
        return true;
 
     }

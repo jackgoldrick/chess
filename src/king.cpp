@@ -13,8 +13,6 @@ bool king::check_path(int location, board* brd) {
     int piece_loc = this->get_location();
     int direction = location - piece_loc;
     int condit = abs(direction);
-    int piece_row = get_row(piece_loc);
-    int piece_col = get_col(piece_loc);
 
     try {
 
@@ -25,9 +23,6 @@ bool king::check_path(int location, board* brd) {
 
         
 
-
-
-
     }
 
 
@@ -35,14 +30,6 @@ bool king::check_path(int location, board* brd) {
 
 
     return true;
-
-
-
-    
-
-
-
-
 
 
 }

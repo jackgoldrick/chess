@@ -13,6 +13,10 @@
 
 using namespace std;
 
+extern char* cur_cmd_strm;
+extern char* prev_cmd_strm;
+
+
 class chess {       // The chess class
 
   private:
@@ -26,7 +30,7 @@ class chess {       // The chess class
 
   public : // Access specifier
     void do_turn(player *refPlayer);
-    
+    piece* query();
     bool king_check();
     chess();
     chess(char mode);
