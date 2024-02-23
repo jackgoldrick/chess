@@ -12,7 +12,7 @@
 #include "knight.h"
 
 
-piece& board::checkSpace(int Loc){
+piece& board::getPiece(int Loc){
 
   int col = Loc % 8;
 
@@ -23,7 +23,7 @@ piece& board::checkSpace(int Loc){
 }
 
 
-piece* board::check_Space(int Loc){
+piece* board::get_piece(int Loc){
 
   int col = Loc % 8;
 
@@ -89,19 +89,6 @@ void board::move_piece(piece* refPieece, int row, int col){
 }
 
 
-bool board::validate_space(piece& ref_piece)  {
-    
-
-
-
-
-
-
-
-
-
-
-}
 
 bool board::check_null(piece* refPiece) {
   if (refPiece) {
@@ -112,6 +99,9 @@ bool board::check_null(piece* refPiece) {
   return false;
 
 }
+
+
+
 
 board::board(){
 

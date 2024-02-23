@@ -15,6 +15,7 @@ using namespace std;
 class player { // The player class
 
   private:
+    struct player_data {
     /* int num_pieces = 16;
     int num_pawns = 8;
     int num_rooks = 2;
@@ -26,6 +27,18 @@ class player { // The player class
     bool king_check = false;
     bool checkmate = false;
     string t; */
+
+
+
+
+    };
+
+
+
+
+
+
+
 
   public:              // Access specifier
     player() = default;

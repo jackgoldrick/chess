@@ -45,8 +45,6 @@ class piece : public board {
     virtual bool is_white();
 
     virtual bool check_path(int location, board* brd);
-    virtual bool check_white_path(int loc);
-    virtual bool check_black_path(int location, board* game);
 
     virtual piece transform(char dest);
    

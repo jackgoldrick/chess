@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <iostream>
-#include <string>
+//#include <string>
 #include "player.h"
 
 /** Default Constructor
@@ -22,12 +22,14 @@ chess::chess(){
  *  the bool of the turn
 */
 void chess::playGame() {
+    
     while (!(this->white->check4mate() || this->black->check4mate())) {
         if (this->white_turn) {
-            
+            query();
             this->do_turn(white);
         }
         else {
+            query();
             this->do_turn(black);
         }
     }
@@ -38,38 +40,52 @@ void chess::playGame() {
  *  @param refPlayer is a pointer so the function knows 
  *  which player the turn is for when the location
  *  is checked
+ * @param instructions is a array of strings where each
+ * index is the 
 */
 void chess::do_turn(player *refPlayer) {
-    
-    int qLoc = 0;
+
     /* Query for piece to use */
     // qLoc => int //
 
-   piece *playerPiece = &(this->gbrd->checkSpace(qLoc));
+   piece *playerPiece = &(this->gbrd->getPiece(int_structions[0]));
 
    while (this->gbrd->check_null(playerPiece)) {
         
-        playerPiece = this->gbrd->query();
+        playerPiece = &(this->gbrd->getPiece(int_structions[0]));
         /*
         
             Query for piece to use
         
         */
+       this->query();
 
    }
+    if (int_structions[1]) {
+        if (playerPiece->check_path(int_structions[2], gbrd)) this->gbrd->move_piece(playerPiece, int_structions[2]);
 
-   if (this->move_request(playerPiece)) this->gbrd->move_piece(playerPiece, qLoc);
+    } else {
+
+        /*
+            attack stuff here
+        */
+       if (playerPiece->check_attack_path(int_structions[2], gbrd)) this->gbrd->attack_piece(playerPiece, int_structions[2]);
+
+    }
 
 }
 
 
-piece* chess::query() {
+void chess::query() {
 
     try {
 
 
 
-        if (cur_cmd_strm)
+        if (cur_cmd_strm) {
+
+            
+        }
 
 
 
@@ -102,8 +118,7 @@ bool chess::move_request(piece* refPieece) {
        // return refPieece->check_white_path(location, gbrd);
     }
 
-    return refPieece->check_black_path(location, gbrd);
-    
+    return false;
 }
 
 /* char chess::move() {

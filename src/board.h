@@ -20,18 +20,16 @@ class board : public chess { // The class
 
   private :
     char game_mode = NULL;
+    piece*** brd;
 
   public:              // Access specifier
     board();
     ~board(); // Destroy
 
-
-    
-    bool validate_space(piece & ref_piece);
     bool check_null(piece* refPiece);
 
-    piece& checkSpace(int Loc);
-    piece* check_Space(int Loc);
+    piece& getPiece(int Loc);
+    piece* get_piece(int Loc);
 
     int get_row (int location);
     int get_col(int location);
@@ -44,8 +42,13 @@ class board : public chess { // The class
     void move_piece(piece* refPieece, int row, int col);
     void move_piece(piece* refPieece, int location);
 
+    void attack_piece(piece* refPieece, int row, int col);
+    void attack_piece(piece* refPieece, int location);
 
-    piece*** brd;
+
+
+    piece* query();
+    
 };
 
 #endif
