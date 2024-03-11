@@ -30,7 +30,7 @@ class chess {       // The chess class
     string structions[3];
     int int_structions[3];
     bool atk_request(piece* refPiece);
-    bool move_request(piece* refPieece);
+    bool move_request(piece* refPieece, int location);
     bool king_check();
     void do_turn(player *refPlayer);
     
@@ -41,5 +41,12 @@ class chess {       // The chess class
     chess();
     chess(char mode);
     void playGame();
+    
+    int translate(int row, int col) { return (row * 8 + col); }
+
+    int get_row(int location) { return ((location - (location % 8)) / 8);  }
+
+    int get_column(int location) { return location % 8;   }
+
 };
 #endif

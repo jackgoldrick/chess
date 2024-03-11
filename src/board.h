@@ -33,7 +33,7 @@ class board : public chess { // The class
 
     int get_row (int location);
     int get_col(int location);
-
+    
 
     bool check_loc(int Loc);
     bool is_empty(int Loc);

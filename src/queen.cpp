@@ -3,6 +3,7 @@
 #include "piece.h"
 #include "queen.h"
 
+
 bool queen::check_path(int location, board* brd){
     int piece_loc = this->get_location();
     int row = get_row(piece_loc);

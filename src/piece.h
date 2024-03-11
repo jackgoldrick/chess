@@ -39,25 +39,27 @@ class piece : public board {
     virtual bool checkFirst_move();
     virtual bool moveFirst();
 
-    virtual bool check_attack_path(int location, board* brd);
+    virtual bool check_attack_path(int location, board* brd) {
+
+
+      if (brd->is_empty(location)) return false;
+
+      if (this->check_path(location, brd)) return true;
+
+      return false;
+
+    }
     virtual bool check_attack_path(piece* refPiece, int row, int col);
 
     virtual bool is_white();
 
     virtual bool check_path(int location, board* brd);
+    virtual int check_path(board* brd, int location);
+
+
 
     virtual piece transform(char dest);
    
-    int translate(int row, int col) {
-    
-      return (row * 8 + col);
-
-
-    }
-
-    int get_row(int location) { return ((location - (location % 8)) / 8);  }
-
-    int get_column(int location) { return location % 8;   }
 
   private:
     // bool white = true;

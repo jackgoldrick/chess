@@ -76,9 +76,18 @@ void board::move_piece(piece* refPieece, int location){
 
 
 }
+void board::move_piece(piece* refPieece, int loc) {
+      
 
+
+
+
+
+
+
+}
 void board::move_piece(piece* refPieece, int row, int col){
-  
+
 
 
 

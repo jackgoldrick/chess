@@ -15,9 +15,11 @@ public:
     rook(char color, int row, int col);
     
     bool move_request() override;
-
+   
     bool check_path(int location, board* brd) override;
-
+    int check_path(board* brd, int location) override;
+    bool check_attack_path(int location, board* brd) override;
+    
     void move() override;
     char attack() override;
     piece transform(char dest) override;

@@ -40,36 +40,31 @@ void chess::playGame() {
  *  @param refPlayer is a pointer so the function knows 
  *  which player the turn is for when the location
  *  is checked
- * @param instructions is a array of strings where each
- * index is the 
+ *  @param instructions is a array of strings where each
+ *  index is the 
 */
 void chess::do_turn(player *refPlayer) {
 
     /* Query for piece to use */
     // qLoc => int //
 
-   piece *playerPiece = &(this->gbrd->getPiece(int_structions[0]));
+   piece *playerPiece = &(gbrd->getPiece(int_structions[0]));
 
-   while (this->gbrd->check_null(playerPiece)) {
-        
-        playerPiece = &(this->gbrd->getPiece(int_structions[0]));
-        /*
-        
-            Query for piece to use
-        
-        */
-       this->query();
-
+   while (gbrd->check_null(playerPiece)) {
+        query();
+        playerPiece = &(gbrd->getPiece(int_structions[0]));
    }
+
+
     if (int_structions[1]) {
-        if (playerPiece->check_path(int_structions[2], gbrd)) this->gbrd->move_piece(playerPiece, int_structions[2]);
+        if (playerPiece->check_path(int_structions[2], gbrd)) gbrd->move_piece(playerPiece, int_structions[2]);
 
     } else {
 
         /*
             attack stuff here
         */
-       if (playerPiece->check_attack_path(int_structions[2], gbrd)) this->gbrd->attack_piece(playerPiece, int_structions[2]);
+       if (playerPiece->check_attack_path(int_structions[2], gbrd)) gbrd->attack_piece(playerPiece, int_structions[2]);
 
     }
 
@@ -78,50 +73,24 @@ void chess::do_turn(player *refPlayer) {
 
 void chess::query() {
 
-    try {
-
-
-
-        if (cur_cmd_strm) {
-
-            
-        }
-
-
-
-
-    } catch (const std::exception& e) {
-
-
-
-
-    }
-
 
 
 
 
 }
 
-/* This function 
 
-    this->gbrd->brd
+/* bool chess::move_request(piece* refPieece, int location) {
+  
 
-*/
-bool chess::move_request(piece* refPieece) {
-    int location = 0;
-    /**
-     *  Query for location to move to
-     *
-    */
     if (refPieece->is_white()) {
-       // return refPieece->check_white_path(location, gbrd);
+       return refPieece->check_path(location, gbrd);
     }
 
     return false;
 }
 
-/* char chess::move() {
+ char chess::move() {
     if (this->move_request()) {
 
         return 'g';
