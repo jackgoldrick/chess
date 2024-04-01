@@ -36,14 +36,73 @@ pawn::pawn(char player){
 }
 
 
-piece pawn::transform(char dest) {
+piece pawn::transform(char outfit, board* brd) {
+    int location = this->get_location();
+
+
+    switch (outfit) {
+        case 'b':
     
+            
+        
+       
+        break;
+
+        case 'r':
+
+        break;
 
 
+        case 'q':
 
+
+        break;
+
+        case 'k':
+
+
+        break;
+
+    
+        default:
+        
+        break;
+    }
+}
+/**
+ * @brief Checks if the pawn can attack the given location
+ * 
+ * @param location The location to check
+ * @param brd The board to check on
+ * @return true if the pawn can attack the given location
+ * @return false if the pawn cannot attack the given location
+ */
+bool pawn::check_attack_path(int location, board* brd) {
+    int piece_loc = this->get_location();
+    int color = -1;
+    int direction = abs(location - piece_loc);
+
+    try {
+        if (direction == 7 || direction == 9) {
+
+            if (this->get_color() == WHITE)  color = 1;
+            if (!brd->is_empty(piece_loc + (color * direction))) return true;
+
+        } else {
+
+            throw std::invalid_argument("Pawns don't attack like that");
+
+        }
+
+    } catch (const std::exception& e) {
+
+        printf(e.what());
+        return false;
+    }
+
+    return false;
 
 }
-
 bool pawn::check_attack_path(int location, board* brd) {
     int piece_loc = this->get_location();
     int color = -1;

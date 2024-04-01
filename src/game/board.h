@@ -38,7 +38,7 @@ class board : public chess { // The class
     bool check_loc(int Loc);
     bool is_empty(int Loc);
 
-
+    void transform_pawn(char outfit, int location);
     void move_piece(piece* refPieece, int row, int col);
     void move_piece(piece* refPieece, int location);
 

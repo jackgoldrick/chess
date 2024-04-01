@@ -24,13 +24,11 @@ public:
 
   // void move() override;
   char attack() override;
-  
 
-  piece transform(char dest) override;
-  
+  piece transform(char outfit, board *brd);
 
   bool is_white() override;
-  
+
   bool check_path(int location, board* brd) override; 
   bool check_attack_path(int location, board* brd) override;
 

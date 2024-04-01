@@ -11,6 +11,10 @@
 #include "king.h"
 #include "knight.h"
 
+template <typename Base, typename T>
+bool instanceof (const T *ptr) {
+  return dynamic_cast<const Base *>(ptr) != nullptr;
+}
 
 piece& board::getPiece(int Loc){
 
@@ -86,17 +90,45 @@ void board::move_piece(piece* refPieece, int loc) {
 
 
 }
-void board::move_piece(piece* refPieece, int row, int col){
+void board::transform_pawn(char outfit, int location) {
+  // need to create an instance of the piece function
+  int row = get_row(location);
+  int col = get_col(location);
+  // check instance here, if good delete pawn from board
+  (this->brd[row][col])->~piece();
 
+  switch (outfit) {
+    case 'b':
+      
+      this->brd[row][col] = new bishop(location);
 
+      break;
 
+    case 'r':
+      
+      this->brd[row][col] = new rook(location);
 
+      break;
 
+    case 'q':
+      
+      this->brd[row][col] = new queen(location);
 
+      break;
 
+    case 'k':
+      
+      this->brd[row][col] = new knight(location);
 
+      break;
+
+    default:
+      
+      this->brd[row][col] = new queen(location);
+
+      break;
+  }
 }
-
 
 
 bool board::check_null(piece* refPiece) {
