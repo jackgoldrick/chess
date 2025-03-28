@@ -1,8 +1,6 @@
 #ifndef QUUEN_H
 #define QUEEN_H
 
-#include <stdlib.h>
-#include <stdio.h>
 #include "piece.h"
 
 // template <class T>

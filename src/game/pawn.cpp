@@ -36,7 +36,7 @@ pawn::pawn(char player){
 }
 
 
-piece pawn::transform(char outfit, board* brd) {
+piece pawn::transform(char outfit, board& brd) {
     int location = this->get_location();
 
 
@@ -77,7 +77,7 @@ piece pawn::transform(char outfit, board* brd) {
  * @return true if the pawn can attack the given location
  * @return false if the pawn cannot attack the given location
  */
-bool pawn::check_attack_path(int location, board* brd) {
+bool pawn::check_attack_path(int location, board& brd) {
     int piece_loc = this->get_location();
     int color = -1;
     int direction = abs(location - piece_loc);
@@ -86,7 +86,7 @@ bool pawn::check_attack_path(int location, board* brd) {
         if (direction == 7 || direction == 9) {
 
             if (this->get_color() == WHITE)  color = 1;
-            if (!brd->is_empty(piece_loc + (color * direction))) return true;
+            if (!brd.is_empty(piece_loc + (color * direction))) return true;
 
         } else {
 
@@ -103,7 +103,7 @@ bool pawn::check_attack_path(int location, board* brd) {
     return false;
 
 }
-bool pawn::check_attack_path(int location, board* brd) {
+bool pawn::check_attack_path(int location, board& brd) {
     int piece_loc = this->get_location();
     int color = -1;
     int direction = abs(location - piece_loc);
@@ -112,7 +112,7 @@ bool pawn::check_attack_path(int location, board* brd) {
         if (direction == 7 || direction == 9) {
 
             if (this->get_color() == WHITE)  color = 1;
-            if (!brd->is_empty(piece_loc + (color * direction))) return true;
+            if (!brd.is_empty(piece_loc + (color * direction))) return true;
 
         } else {
 
@@ -131,7 +131,7 @@ bool pawn::check_attack_path(int location, board* brd) {
 }
 
 
-bool pawn::check_path(int location, board* brd) {
+bool pawn::check_path(int location, board& brd) {
     int piece_loc = this->get_location();
     int color = -1;
 
@@ -144,14 +144,14 @@ bool pawn::check_path(int location, board* brd) {
 
         for (int i = 1; i < 2; i++ ) {
 
-            if (!brd->is_empty(piece_loc + (color * 8 * i))) return false;
+            if (!brd.is_empty(piece_loc + (color * 8 * i))) return false;
        } 
        
        return true;
 
     }
 
-    if (brd->is_empty(piece_loc + (color * 8))) return true;
+    if (brd.is_empty(piece_loc + (color * 8))) return true;
 
     return false;
 

@@ -1,8 +1,7 @@
 #ifndef BISHOP_H
 #define BISHOP_H
 
-#include <stdlib.h>
-#include <stdio.h>
+
 #include "piece.h"
 
 // template <class T>

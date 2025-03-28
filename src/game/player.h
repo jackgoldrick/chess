@@ -2,10 +2,7 @@
 #define PLAYER_H
 
 //** c libraries I fucking need
-#include <stdlib.h>
-#include <stdio.h>
-#include <iostream>
-#include <string>
+
 #include "chess.h"
 #include "piece.h"
 

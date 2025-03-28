@@ -7,10 +7,6 @@
 
 #define EMPTY 'e'
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <iostream>
-#include <string>
 #include "piece.h"
 #include "chess.h"
 

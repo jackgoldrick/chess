@@ -2,8 +2,6 @@
 #define PIECE_H
 
 
-#include <stdlib.h>
-#include <stdio.h>
 #include <stdexcept>
 #include "player.h"
 #include "board.h"
@@ -39,22 +37,22 @@ class piece : public board {
     virtual bool checkFirst_move();
     virtual bool moveFirst();
 
-    virtual bool check_attack_path(int location, board* brd) {
+    virtual bool check_attack_path(int location, board& brd) {
 
 
-      if (brd->is_empty(location)) return false;
+      if (brd.is_empty(location)) return false;
 
       if (this->check_path(location, brd)) return true;
 
       return false;
 
     }
-    virtual bool check_attack_path(piece* refPiece, int row, int col);
+    virtual bool check_attack_path(piece& refPiece, int row, int col);
 
     virtual bool is_white();
 
-    virtual bool check_path(int location, board* brd);
-    virtual int check_path(board* brd, int location);
+    virtual bool check_path(int location, board& brd);
+    virtual int check_path(board& brd, int location);
 
 
 

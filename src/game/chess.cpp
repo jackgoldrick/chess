@@ -26,11 +26,11 @@ void chess::playGame() {
     while (!(this->white->check4mate() || this->black->check4mate())) {
         if (this->white_turn) {
             query();
-            this->do_turn(white);
+            this->do_turn(*white);
         }
         else {
             query();
-            this->do_turn(black);
+            this->do_turn(*black);
         }
     }
 }
@@ -43,7 +43,7 @@ void chess::playGame() {
  *  @param instructions is a array of strings where each
  *  index is the 
 */
-void chess::do_turn(player *refPlayer) {
+void chess::do_turn(player& refPlayer) {
 
     /* Query for piece to use */
     // qLoc => int //
@@ -57,14 +57,14 @@ void chess::do_turn(player *refPlayer) {
 
 
     if (int_structions[1]) {
-        if (playerPiece->check_path(int_structions[2], gbrd)) gbrd->move_piece(playerPiece, int_structions[2]);
+        if (playerPiece->check_path(int_structions[2], *gbrd)) gbrd->move_piece(playerPiece, int_structions[2]);
 
     } else {
 
         /*
             attack stuff here
         */
-       if (playerPiece->check_attack_path(int_structions[2], gbrd)) gbrd->attack_piece(playerPiece, int_structions[2]);
+       if (playerPiece->check_attack_path(int_structions[2], *gbrd)) gbrd->attack_piece(playerPiece, int_structions[2]);
 
     }
 

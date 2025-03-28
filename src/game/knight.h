@@ -1,8 +1,7 @@
 #ifndef KNIGHT_H
 #define KNIGHT_H
 
-#include <stdlib.h>
-#include <stdio.h>
+
 #include "piece.h"
 
 // template <class T>   

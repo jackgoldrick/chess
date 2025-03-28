@@ -9,7 +9,7 @@ king::king(char color, int row, int col){
 
 }
 
-bool king::check_path(int location, board* brd) {
+bool king::check_path(int location, board& brd) {
     int piece_loc = this->get_location();
     int direction = location - piece_loc;
     int condit = abs(direction);
@@ -26,7 +26,7 @@ bool king::check_path(int location, board* brd) {
     }
 
 
-    if (!brd->is_empty(piece_loc + direction)) return false;
+    if (!brd.is_empty(piece_loc + direction)) return false;
 
 
     return true;

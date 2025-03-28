@@ -1,8 +1,6 @@
 #ifndef PAWN_H
 #define PAWN_H
 
-#include <stdlib.h>
-#include <stdio.h>
 #include "piece.h"
 
 //template <class T>
@@ -25,12 +23,12 @@ public:
   // void move() override;
   char attack() override;
 
-  piece transform(char outfit, board *brd);
+  piece transform(char outfit, board& brd);
 
   bool is_white() override;
 
-  bool check_path(int location, board* brd) override; 
-  bool check_attack_path(int location, board* brd) override;
+  bool check_path(int location, board& brd) override; 
+  bool check_attack_path(int location, board& brd) override;
 
   
 
